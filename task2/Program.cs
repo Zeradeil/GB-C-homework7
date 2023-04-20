@@ -7,15 +7,19 @@ int[,] massive = FillArray(m, n);
 Print(massive);
 int row = Readnum("Введите строку массива => ");
 int colum = Readnum("Введите столбец массива => ");
-if (row <= m && colum <= n)
-{
-    System.Console.WriteLine($"{massive[row - 1, colum - 1]}");
-}
-else
-{
-    System.Console.WriteLine("Этого элемента нет");
-}
+test(massive, colum, row);
 
+void test(int[,] massive, int row, int colum)
+{
+    if (row <= m && colum <= n)
+    {
+        System.Console.WriteLine($"{massive[row - 1, colum - 1]}");
+    }
+    else
+    {
+        System.Console.WriteLine("Этого элемента нет");
+    }
+}
 int Readnum(string massage)
 {
     System.Console.Write(massage);
