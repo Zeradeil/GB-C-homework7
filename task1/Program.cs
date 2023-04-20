@@ -3,8 +3,7 @@
 
 int m = Readnum("Введите количество строк массива => ");
 int n = Readnum("Введите количество столбцов массива => ");
-System.Console.WriteLine($"{m}, {n}");
-float[,] massive = FillArray(m, n);
+double[,] massive = FillArray(m, n);
 Print(massive);
 
 int Readnum(string massage)
@@ -13,22 +12,22 @@ int Readnum(string massage)
     return Convert.ToInt32(System.Console.ReadLine());
 }
 
-float[,] FillArray(int m, int n)
+double[,] FillArray(int m, int n)
 {
     Random rand = new Random();
-    float[,] array = new float[m, n];
+    double[,] array = new double[m, n];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = rand.NextDouble();
+            array[i, j] = Math.Round(rand.NextDouble() * rand.Next(-10, 10), 3);
         }
     }
     return array;
 
 }
 
-void Print(float[,] FillArray)
+void Print(double[,] FillArray)
 {
     for (int i = 0; i < massive.GetLength(0); i++)
     {
